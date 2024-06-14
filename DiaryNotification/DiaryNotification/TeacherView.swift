@@ -43,7 +43,7 @@ struct TeacherView: View {
                 .tint(.customBlue)
                 .buttonStyle(.borderedProminent)
             } else {
-                Text("학생의 일기를 기다리는 중이에요")
+                WaitingView(currentView: currentView)
             }
         }
         .padding()

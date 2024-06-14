@@ -14,7 +14,7 @@ struct StudentView: View {
     var body: some View {
         VStack {
             if isDiarySubmitted {
-                Text("선생님의 도장을 기다리는 중이에요")
+                WaitingView(currentView: currentView)
             } else {
                 TextField("diary", text: $diaryInput, axis: .vertical)
                     .multilineTextAlignment(.leading)
