@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B021DB52C1BE49A00B1BE6A /* NotificationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B021DB42C1BE49A00B1BE6A /* NotificationTestView.swift */; };
 		55646E1D2C1A916700400A34 /* DiaryNotificationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55646E1C2C1A916700400A34 /* DiaryNotificationApp.swift */; };
 		55646E1F2C1A916700400A34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55646E1E2C1A916700400A34 /* ContentView.swift */; };
 		55646E212C1A916800400A34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55646E202C1A916800400A34 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B021DB42C1BE49A00B1BE6A /* NotificationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTestView.swift; sourceTree = "<group>"; };
 		55646E192C1A916700400A34 /* DiaryNotification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryNotification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55646E1C2C1A916700400A34 /* DiaryNotificationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryNotificationApp.swift; sourceTree = "<group>"; };
 		55646E1E2C1A916700400A34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				55646E1C2C1A916700400A34 /* DiaryNotificationApp.swift */,
 				55646E1E2C1A916700400A34 /* ContentView.swift */,
+				1B021DB42C1BE49A00B1BE6A /* NotificationTestView.swift */,
 				55646E202C1A916800400A34 /* Assets.xcassets */,
 				55646E222C1A916800400A34 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				55646E1F2C1A916700400A34 /* ContentView.swift in Sources */,
 				55646E1D2C1A916700400A34 /* DiaryNotificationApp.swift in Sources */,
+				1B021DB52C1BE49A00B1BE6A /* NotificationTestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
