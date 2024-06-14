@@ -17,6 +17,7 @@ struct ContentView: View {
                     Text("\(user)")
                 }
             }
+            .tint(.black)
             if currentView == "학생" {
                 StudentView()
             } else {
