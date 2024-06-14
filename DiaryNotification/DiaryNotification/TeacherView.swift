@@ -7,9 +7,13 @@
 
 import SwiftUI
 
-struct TeacherView: View {    var body: some View {
+struct TeacherView: View {
+    @Binding var currentView: String
+    @Binding var diary: String
+    @Binding var isDiarySubmitted: Bool
+    var body: some View {
         VStack {
-            Text("diary")
+            Text(diary)
                 .font(.title)
                 .multilineTextAlignment(.leading)
                 .containerRelativeFrame(.horizontal) { size, axis in
@@ -41,5 +45,5 @@ struct TeacherView: View {    var body: some View {
 }
 
 #Preview {
-    TeacherView()
+    TeacherView(currentView: .constant("학생"), diary: .constant("예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. "), isDiarySubmitted: .constant(false))
 }

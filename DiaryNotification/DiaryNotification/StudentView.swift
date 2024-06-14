@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct StudentView: View {
-    @State private var diaryInput = ""
+    @Binding var currentView: String
+    @Binding var diaryInput: String
+    @Binding var isDiarySubmitted: Bool
     var body: some View {
         VStack {
             TextField("diary", text: $diaryInput, axis: .vertical)
@@ -23,6 +25,7 @@ struct StudentView: View {
             Spacer()
             Button(action: {
                 print(diaryInput)
+                currentView = "선생님"
             }, label: {
                 HStack {
                     Spacer()
@@ -40,5 +43,5 @@ struct StudentView: View {
 }
 
 #Preview {
-    StudentView()
+    StudentView(currentView: .constant("학생"), diaryInput: .constant("예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. "), isDiarySubmitted: .constant(false))
 }
