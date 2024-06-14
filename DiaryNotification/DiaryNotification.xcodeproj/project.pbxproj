@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BBCD2522C1BCA2F00AC8784 /* StudentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBCD2512C1BCA2F00AC8784 /* StudentView.swift */; };
+		1BBCD2542C1BCA3700AC8784 /* TeacherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBCD2532C1BCA3700AC8784 /* TeacherView.swift */; };
+		1BBCD2562C1BDC2700AC8784 /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBCD2552C1BDC2700AC8784 /* WaitingView.swift */; };
 		55646E1D2C1A916700400A34 /* DiaryNotificationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55646E1C2C1A916700400A34 /* DiaryNotificationApp.swift */; };
 		55646E1F2C1A916700400A34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55646E1E2C1A916700400A34 /* ContentView.swift */; };
 		55646E212C1A916800400A34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55646E202C1A916800400A34 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BBCD2512C1BCA2F00AC8784 /* StudentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentView.swift; sourceTree = "<group>"; };
+		1BBCD2532C1BCA3700AC8784 /* TeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherView.swift; sourceTree = "<group>"; };
+		1BBCD2552C1BDC2700AC8784 /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
 		55646E192C1A916700400A34 /* DiaryNotification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryNotification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55646E1C2C1A916700400A34 /* DiaryNotificationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryNotificationApp.swift; sourceTree = "<group>"; };
 		55646E1E2C1A916700400A34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +59,9 @@
 			children = (
 				55646E1C2C1A916700400A34 /* DiaryNotificationApp.swift */,
 				55646E1E2C1A916700400A34 /* ContentView.swift */,
+				1BBCD2512C1BCA2F00AC8784 /* StudentView.swift */,
+				1BBCD2532C1BCA3700AC8784 /* TeacherView.swift */,
+				1BBCD2552C1BDC2700AC8784 /* WaitingView.swift */,
 				55646E202C1A916800400A34 /* Assets.xcassets */,
 				55646E222C1A916800400A34 /* Preview Content */,
 			);
@@ -138,7 +147,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				55646E1F2C1A916700400A34 /* ContentView.swift in Sources */,
+				1BBCD2562C1BDC2700AC8784 /* WaitingView.swift in Sources */,
+				1BBCD2522C1BCA2F00AC8784 /* StudentView.swift in Sources */,
 				55646E1D2C1A916700400A34 /* DiaryNotificationApp.swift in Sources */,
+				1BBCD2542C1BCA3700AC8784 /* TeacherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
