@@ -2,7 +2,8 @@
 NC2 Notification study of Ace and Groo
 
 # MVP
-- [ ] View 구현하기 
+- [ ] View 구현하기
+- [ ] permission 구현하기
 - [ ] 특정 시간에 학생에게 일기장 작성 알림주기
 - [ ] 일기장 제출하면 선생님에게 알림주기
 - [ ] 일기장 제출 알림에 notification action 설정하기
