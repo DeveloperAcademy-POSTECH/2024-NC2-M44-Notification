@@ -8,12 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var currentView = "학생"
+    let users = ["학생", "선생님"]
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Picker("user", selection: $currentView) {
+                ForEach(users, id: \.self) { user in
+                    Text("\(user)")
+                }
+            }
+            if currentView == "학생" {
+                StudentView()
+            } else {
+                TeacherView()
+            }
         }
         .padding()
     }
