@@ -17,10 +17,8 @@ struct TeacherView: View {
                 Text(diary)
                     .font(.title)
                     .multilineTextAlignment(.leading)
-                    .containerRelativeFrame(.horizontal) { size, axis in
-                        size * 0.9
-                    }
-                    .frame(maxHeight: .infinity)
+                    .padding()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(
                         RoundedRectangle(cornerRadius: 20)
                             .foregroundColor(.customBlue.opacity(0.2))
@@ -28,7 +26,7 @@ struct TeacherView: View {
                     .padding(.vertical)
                 Spacer()
                 Button(action: {
-                    print("stamp")
+                    print("stamp diary")
                     isDiarySubmitted = false
                     diary = ""
                 }, label: {
@@ -51,5 +49,5 @@ struct TeacherView: View {
 }
 
 #Preview {
-    TeacherView(currentView: .constant("학생"), diary: .constant("예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. "), isDiarySubmitted: .constant(false))
+    TeacherView(currentView: .constant("선생님"), diary: .constant("예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. "), isDiarySubmitted: .constant(true))
 }

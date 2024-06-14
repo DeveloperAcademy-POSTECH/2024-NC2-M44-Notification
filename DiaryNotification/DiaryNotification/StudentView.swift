@@ -19,6 +19,7 @@ struct StudentView: View {
                 TextField("diary", text: $diaryInput, axis: .vertical)
                     .multilineTextAlignment(.leading)
                     .font(.title)
+                    .padding()
                     .frame(maxHeight: .infinity)
                     .background(
                         RoundedRectangle(cornerRadius: 20)
@@ -27,7 +28,7 @@ struct StudentView: View {
                     .padding(.vertical)
                 Spacer()
                 Button(action: {
-                    print(diaryInput)
+                    print("submit diary")
                     isDiarySubmitted = true
                 }, label: {
                     HStack {
