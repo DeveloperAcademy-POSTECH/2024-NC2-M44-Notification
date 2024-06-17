@@ -19,9 +19,9 @@ struct SettingView: View {
             }
             Spacer()
             Text("Not working?")
-            Button("Request permissions") {
-                notify.askPermission()
-            }
+//            Button("Request permissions") {
+//                notify.askPermission()
+//            }
         }
         .padding()
     }

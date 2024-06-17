@@ -17,6 +17,7 @@
 		55646E1F2C1A916700400A34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55646E1E2C1A916700400A34 /* ContentView.swift */; };
 		55646E212C1A916800400A34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55646E202C1A916800400A34 /* Assets.xcassets */; };
 		55646E242C1A916800400A34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55646E232C1A916800400A34 /* Preview Assets.xcassets */; };
+		55C810342C1ED7170096ABC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C810332C1ED7170096ABC8 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		55646E1E2C1A916700400A34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		55646E202C1A916800400A34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55646E232C1A916800400A34 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		55C810312C1ED3980096ABC8 /* DiaryNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DiaryNotification.entitlements; sourceTree = "<group>"; };
+		55C810332C1ED7170096ABC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +66,8 @@
 		55646E1B2C1A916700400A34 /* DiaryNotification */ = {
 			isa = PBXGroup;
 			children = (
-				55646E1C2C1A916700400A34 /* DiaryNotificationApp.swift */,
+				55C810322C1ED7080096ABC8 /* App */,
+				55C810312C1ED3980096ABC8 /* DiaryNotification.entitlements */,
 				55646E1E2C1A916700400A34 /* ContentView.swift */,
 				1B26B1752C1BEE3A0099932D /* NotificationTestView.swift */,
 				1B31B4B02C1FD015001DDC44 /* SettingView.swift */,
@@ -83,6 +87,15 @@
 				55646E232C1A916800400A34 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		55C810322C1ED7080096ABC8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				55646E1C2C1A916700400A34 /* DiaryNotificationApp.swift */,
+				55C810332C1ED7170096ABC8 /* AppDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C810342C1ED7170096ABC8 /* AppDelegate.swift in Sources */,
 				1B31B4AF2C1FCF16001DDC44 /* LocalNotificationHandler.swift in Sources */,
 				55646E1F2C1A916700400A34 /* ContentView.swift in Sources */,
 				1BBCD2562C1BDC2700AC8784 /* WaitingView.swift in Sources */,
@@ -293,11 +307,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DiaryNotification/DiaryNotification.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DiaryNotification/Preview Content\"";
-				DEVELOPMENT_TEAM = 62WZR6T98R;
+				DEVELOPMENT_TEAM = 7V4779Q2XR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -310,7 +325,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = groo.DiaryNotification;
+				PRODUCT_BUNDLE_IDENTIFIER = ace.DiaryNotification;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -324,11 +339,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DiaryNotification/DiaryNotification.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DiaryNotification/Preview Content\"";
-				DEVELOPMENT_TEAM = 62WZR6T98R;
+				DEVELOPMENT_TEAM = 7V4779Q2XR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -341,7 +357,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = groo.DiaryNotification;
+				PRODUCT_BUNDLE_IDENTIFIER = ace.DiaryNotification;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
