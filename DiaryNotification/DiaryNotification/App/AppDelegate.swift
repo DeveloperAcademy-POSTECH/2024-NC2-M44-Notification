@@ -69,7 +69,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.list, .sound, .badge])
+        completionHandler([.banner, .sound, .badge])
     }
     
     // 사용자가 알림을 클릭하면 이 메소드가 호출된다.
