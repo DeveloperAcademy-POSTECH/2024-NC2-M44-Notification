@@ -9,34 +9,25 @@ import SwiftUI
 import NotificationCenter
 
 struct NotificationTestView: View {
+    @State private var selectedDate = Date()
+    let notify = NotificationHandler()
     var body: some View {
         VStack {
-            Button("request permission") {
-                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .provisional, .sound]) { success, error in
-                    if success {
-                        print("permission complete")
-                    } else {
-                        print(error?.localizedDescription ?? "error")
-                    }
-                }
+            Spacer()
+            Button("Send a notification in 5 seconds") {
+                notify.sendNotification(date: Date(), type: "time", timeInterval: 5, title: "Time Notification", body: "This is timeinterval notification")
             }
-            Button("show notification") {
-                let content = UNMutableNotificationContent()
-                content.title = "Feed the cat"
-                content.subtitle = "It looks hungry"
-                content.sound = UNNotificationSound.default
-
-                // show this notification five seconds from now
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-
-                // choose a random identifier
-                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-
-                // add our notification request
-                UNUserNotificationCenter.current().add(request)
-
+            DatePicker("Pick noti time: ", selection: $selectedDate, in: Date()...)
+            Button("Send a notification at time") {
+                notify.sendNotification(date: selectedDate, type: "date", title: "Date Notification", body: "This is calendar notification")
+            }
+            Spacer()
+            Text("Not working?")
+            Button("Request permissions") {
+                notify.askPermission()
             }
         }
+        .padding()
     }
 }
 
