@@ -15,11 +15,11 @@ struct NotificationTestView: View {
         VStack {
             Spacer()
             Button("Send a notification in 5 seconds") {
-                notify.sendNotification(date: Date(), type: "time", timeInterval: 5, title: "Time Notification", body: "This is timeinterval notification")
+                notify.sendNotification(date: Date(), type: "timeInterval", timeInterval: 5, title: "Time Notification", body: "This is timeinterval notification")
             }
             DatePicker("Pick noti time: ", selection: $selectedDate, in: Date()...)
             Button("Send a notification at time") {
-                notify.sendNotification(date: selectedDate, type: "date", title: "Date Notification", body: "This is calendar notification")
+                notify.sendNotification(date: selectedDate, type: "calendar", title: "Date Notification", body: "This is calendar notification")
             }
             Spacer()
             Text("Not working?")

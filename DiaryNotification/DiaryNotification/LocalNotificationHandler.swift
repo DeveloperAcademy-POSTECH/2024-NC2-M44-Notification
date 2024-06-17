@@ -21,10 +21,10 @@ class NotificationHandler {
     
     func sendNotification(date: Date, type: String, timeInterval: Double = 5, title: String, body: String) {
         var trigger: UNNotificationTrigger?
-        if type == "date" {
+        if type == "calendar" {
             let dateComponents = Calendar.current.dateComponents([.day, .month, .year, .hour, .minute], from: date)
             trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        } else if type == "time" {
+        } else if type == "timeInterval" {
             trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         }
         

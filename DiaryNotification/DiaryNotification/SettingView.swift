@@ -15,7 +15,7 @@ struct SettingView: View {
             Spacer()
             DatePicker("일기 알림 시간: ", selection: $selectedDate, in: Date()...)
             Button("Send a notification at time") {
-                notify.sendNotification(date: selectedDate, type: "date", title: "Date Notification", body: "This is calendar notification")
+                notify.sendNotification(date: selectedDate, type: "calendar", title: "Date Notification", body: "This is calendar notification")
             }
             Spacer()
             Text("Not working?")
