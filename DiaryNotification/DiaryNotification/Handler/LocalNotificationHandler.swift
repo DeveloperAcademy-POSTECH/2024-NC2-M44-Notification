@@ -31,7 +31,7 @@ class NotificationHandler {
         let contet = UNMutableNotificationContent()
         contet.title = title
         contet.body = body
-        contet.sound = UNNotificationSound.default
+        contet.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "LongPop.mp3"))
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: contet, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
