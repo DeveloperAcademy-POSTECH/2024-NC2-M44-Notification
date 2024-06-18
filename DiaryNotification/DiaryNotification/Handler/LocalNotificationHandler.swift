@@ -22,10 +22,13 @@ class NotificationHandler {
     func sendNotification(date: Date, type: String, timeInterval: Double = 5, title: String, body: String) {
         var trigger: UNNotificationTrigger?
         if type == "calendar" {
-            let dateComponents = Calendar.current.dateComponents([.day, .month, .year, .hour, .minute], from: date)
+            let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
             trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         } else if type == "timeInterval" {
             trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+        } else if type == "repeat" {
+            let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
+            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         }
         
         let contet = UNMutableNotificationContent()
