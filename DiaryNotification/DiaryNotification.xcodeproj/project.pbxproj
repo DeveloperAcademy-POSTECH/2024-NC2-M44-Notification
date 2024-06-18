@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B26B1762C1BEE3A0099932D /* NotificationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B26B1752C1BEE3A0099932D /* NotificationTestView.swift */; };
 		1B31B4AF2C1FCF16001DDC44 /* LocalNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31B4AE2C1FCF16001DDC44 /* LocalNotificationHandler.swift */; };
 		1B31B4B12C1FD015001DDC44 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31B4B02C1FD015001DDC44 /* SettingView.swift */; };
 		1B31B4B52C1FE693001DDC44 /* LongPop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1B31B4B42C1FE693001DDC44 /* LongPop.mp3 */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B26B1752C1BEE3A0099932D /* NotificationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTestView.swift; sourceTree = "<group>"; };
 		1B31B4AE2C1FCF16001DDC44 /* LocalNotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationHandler.swift; sourceTree = "<group>"; };
 		1B31B4B02C1FD015001DDC44 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		1B31B4B42C1FE693001DDC44 /* LongPop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LongPop.mp3; sourceTree = "<group>"; };
@@ -53,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				55646E1E2C1A916700400A34 /* ContentView.swift */,
-				1B26B1752C1BEE3A0099932D /* NotificationTestView.swift */,
 				1B31B4B02C1FD015001DDC44 /* SettingView.swift */,
 				1BBCD2512C1BCA2F00AC8784 /* StudentView.swift */,
 				1BBCD2532C1BCA3700AC8784 /* TeacherView.swift */,
@@ -196,7 +193,6 @@
 				55646E1D2C1A916700400A34 /* DiaryNotificationApp.swift in Sources */,
 				1B31B4B12C1FD015001DDC44 /* SettingView.swift in Sources */,
 				1BBCD2542C1BCA3700AC8784 /* TeacherView.swift in Sources */,
-				1B26B1762C1BEE3A0099932D /* NotificationTestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
