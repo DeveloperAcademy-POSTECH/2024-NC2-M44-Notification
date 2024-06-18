@@ -48,7 +48,6 @@ class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterD
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "LongPop.mp3"))
         if type == "action" {
             setCategories()
-            content.userInfo = ["MEETING_ID" : "meetingID", "USER_ID" : "userID" ]
             content.categoryIdentifier = "BASIC_NOTIFICATION"
         }
 
