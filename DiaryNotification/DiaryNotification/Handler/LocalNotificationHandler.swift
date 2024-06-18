@@ -9,15 +9,15 @@ import Foundation
 import UserNotifications
 
 class NotificationHandler {
-//    func askPermission() {
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-//            if success {
-//                print("permission: access granted")
-//            } else if let error = error {
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
+    func askPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                print("permission: access granted")
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     func sendNotification(date: Date, type: String, timeInterval: Double = 5, title: String, body: String) {
         var trigger: UNNotificationTrigger?

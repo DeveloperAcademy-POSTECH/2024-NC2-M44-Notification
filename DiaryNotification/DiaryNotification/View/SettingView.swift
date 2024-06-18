@@ -25,7 +25,7 @@ struct SettingView: View {
             Text("알림이 안 보이나요?")
             Button("알림 권한 허용하기") {
                 print("set alarm permission")
-//                notify.askPermission()
+                notify.askPermission()
             }
             .font(.title)
             .buttonStyle(.bordered)
