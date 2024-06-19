@@ -101,7 +101,7 @@ class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterD
                     
           case "SKIP_ACTION":
              print("didReceive: skip")
-              UserDefaults.standard.set("휴일", forKey: "diary")
+              UserDefaults.standard.set("오늘은 일기 쉬는 날!", forKey: "diary")
               UserDefaults.standard.set(true, forKey: "isDiarySubmitted")
              break
                     
