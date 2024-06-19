@@ -33,6 +33,11 @@ struct ContentView: View {
                     Image(systemName: "gearshape")
                 })
             }
+            .onAppear {
+                print("VStack: on appear")
+                diary = UserDefaults.standard.string(forKey: "diary")!
+                isDiarySubmitted = UserDefaults.standard.bool(forKey: "isDiarySubmitted")
+            }
         }
     }
 }
