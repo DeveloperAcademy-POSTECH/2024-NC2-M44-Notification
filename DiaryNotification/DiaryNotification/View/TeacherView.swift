@@ -46,7 +46,7 @@ struct TeacherView: View {
     }
     
     func stampDiary() {
-        print("stamp diary")
+        print("teacher: stamp diary")
         isDiarySubmitted = false
         diary = ""
     }

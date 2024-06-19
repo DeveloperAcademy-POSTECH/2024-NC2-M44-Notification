@@ -47,7 +47,7 @@ struct StudentView: View {
     }
     
     func submitDiary(text: String) {
-        print("submit diary")
+        print("student: submit diary")
         isDiarySubmitted = true
         diary = text
     }
