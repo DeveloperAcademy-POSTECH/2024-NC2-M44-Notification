@@ -42,8 +42,9 @@ class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterD
             let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
             trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         } else if type == "action" {
-            let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
-            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+//            let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
+//            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         }
         
         // 알림의 제목, 내용, 소리를 설정한다
@@ -93,11 +94,15 @@ class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterD
               print("didReceive: text input")
               if let userInput = (response as? UNTextInputNotificationResponse)?.userText {
                   print(userInput)
+                  UserDefaults.standard.set(userInput, forKey: "diary")
+                  UserDefaults.standard.set(true, forKey: "isDiarySubmitted")
               }
              break
                     
           case "SKIP_ACTION":
              print("didReceive: skip")
+              UserDefaults.standard.set("휴일", forKey: "diary")
+              UserDefaults.standard.set(true, forKey: "isDiarySubmitted")
              break
                     
           default:

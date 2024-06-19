@@ -49,7 +49,9 @@ struct StudentView: View {
     func submitDiary(text: String) {
         print("student: submit diary")
         isDiarySubmitted = true
+        UserDefaults.standard.set(isDiarySubmitted, forKey: "isDiarySubmitted")
         diary = text
+        UserDefaults.standard.set(diary, forKey: "diary")
     }
 }
 

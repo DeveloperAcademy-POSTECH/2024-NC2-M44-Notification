@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var currentView = "학생"
-    @State private var diary = ""
-    @State private var isDiarySubmitted = false
+    @State private var diary = UserDefaults.standard.string(forKey: "diary")!
+    @State private var isDiarySubmitted = UserDefaults.standard.bool(forKey: "isDiarySubmitted")
     let users = ["학생", "선생님"]
     var body: some View {
         NavigationStack {
