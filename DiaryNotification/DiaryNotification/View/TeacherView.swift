@@ -26,9 +26,7 @@ struct TeacherView: View {
                     .padding(.vertical)
                 Spacer()
                 Button(action: {
-                    print("stamp diary")
-                    isDiarySubmitted = false
-                    diary = ""
+                    stampDiary()
                 }, label: {
                     HStack {
                         Spacer()
@@ -45,6 +43,12 @@ struct TeacherView: View {
             }
         }
         .padding()
+    }
+    
+    func stampDiary() {
+        print("teacher: stamp diary")
+        isDiarySubmitted = false
+        diary = ""
     }
 }
 

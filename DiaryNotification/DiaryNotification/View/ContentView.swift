@@ -22,7 +22,7 @@ struct ContentView: View {
                 }
                 .tint(.black)
                 if currentView == "학생" {
-                    StudentView(currentView: $currentView, diaryInput: $diary, isDiarySubmitted: $isDiarySubmitted)
+                    StudentView(currentView: $currentView, diary: $diary, isDiarySubmitted: $isDiarySubmitted)
                 } else {
                     TeacherView(currentView: $currentView, diary: $diary, isDiarySubmitted: $isDiarySubmitted)
                 }

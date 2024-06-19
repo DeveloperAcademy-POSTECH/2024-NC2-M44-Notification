@@ -9,14 +9,15 @@ import SwiftUI
 
 struct StudentView: View {
     @Binding var currentView: String
-    @Binding var diaryInput: String
+    @Binding var diary: String
     @Binding var isDiarySubmitted: Bool
+    @State var textInput = ""
     var body: some View {
         VStack {
             if isDiarySubmitted {
                 WaitingView(currentView: currentView)
             } else {
-                TextField("diary", text: $diaryInput, axis: .vertical)
+                TextField("diary", text: $textInput, axis: .vertical)
                     .multilineTextAlignment(.leading)
                     .font(.title)
                     .padding()
@@ -28,8 +29,7 @@ struct StudentView: View {
                     .padding(.vertical)
                 Spacer()
                 Button(action: {
-                    print("submit diary")
-                    isDiarySubmitted = true
+                    submitDiary(text: textInput)
                 }, label: {
                     HStack {
                         Spacer()
@@ -45,8 +45,14 @@ struct StudentView: View {
         }
         .padding()
     }
+    
+    func submitDiary(text: String) {
+        print("student: submit diary")
+        isDiarySubmitted = true
+        diary = text
+    }
 }
 
 #Preview {
-    StudentView(currentView: .constant("학생"), diaryInput: .constant("예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. "), isDiarySubmitted: .constant(false))
+    StudentView(currentView: .constant("학생"), diary: .constant("예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. 예시 입니다. "), isDiarySubmitted: .constant(false))
 }

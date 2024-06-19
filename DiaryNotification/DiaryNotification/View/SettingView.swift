@@ -8,20 +8,29 @@
 import SwiftUI
 
 struct SettingView: View {
-    @State private var selectedDate = Date()
-    let notify = NotificationHandler()
+    @State private var selectedTime = Date()
+    let notify = NotificationHandler.instance
+    
     var body: some View {
-        VStack {
+        VStack(spacing: 30) {
             Spacer()
-            DatePicker("일기 알림 시간: ", selection: $selectedDate, in: Date()...)
-            Button("Send a notification at time") {
-                notify.sendNotification(date: selectedDate, type: "calendar", title: "Date Notification", body: "This is calendar notification")
+            DatePicker("일기 쓸 시간:", selection: $selectedTime, in: Date()..., displayedComponents: [.hourAndMinute])
+                .font(.title)
+            Button("설정한 시간에 알림 받기") {
+                notify.sendNotification(date: selectedTime, type: "action", title: "일기 쓸 시간!", body: "일기를 쓸 시간이에요. 알림을 클릭하여 일기를 써 볼까요?")
             }
+            .buttonStyle(.borderedProminent)
+            .font(.title)
+            .tint(.customYellow)
             Spacer()
-            Text("Not working?")
-//            Button("Request permissions") {
-//                notify.askPermission()
-//            }
+            Text("알림이 안 보이나요?")
+            Button("알림 권한 허용하기") {
+                print("set alarm permission")
+                notify.askPermission()
+            }
+            .font(.title)
+            .buttonStyle(.bordered)
+            .tint(.customYellow)
         }
         .padding()
     }
