@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.scenePhase) var scenePhase
     @State private var currentView = "학생"
     @State private var diary = UserDefaults.standard.string(forKey: "diary")!
     @State private var isDiarySubmitted = UserDefaults.standard.bool(forKey: "isDiarySubmitted")
@@ -34,9 +35,19 @@ struct ContentView: View {
                 })
             }
             .onAppear {
-                print("VStack: on appear")
+                print("onAppear: ContentView")
                 diary = UserDefaults.standard.string(forKey: "diary")!
                 isDiarySubmitted = UserDefaults.standard.bool(forKey: "isDiarySubmitted")
+            }
+            .onChange(of: scenePhase) { newValue in
+                switch newValue {
+                case .active:
+                    print("active: ContentView")
+                    diary = UserDefaults.standard.string(forKey: "diary")!
+                    isDiarySubmitted = UserDefaults.standard.bool(forKey: "isDiarySubmitted")
+                default:
+                    break
+                }
             }
         }
     }
