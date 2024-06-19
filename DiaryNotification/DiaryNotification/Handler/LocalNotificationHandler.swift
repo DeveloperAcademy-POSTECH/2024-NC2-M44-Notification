@@ -42,7 +42,8 @@ class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterD
             let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
             trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         } else if type == "action" {
-            trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
+            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         }
         
         // 알림의 제목, 내용, 소리를 설정한다
@@ -64,13 +65,12 @@ class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterD
         print("set: categories")
         // Define the custom actions
         let textAction = UNTextInputNotificationAction(identifier: "TEXT_ACTION", title: "간단하게 일기 쓰기", options: [], textInputButtonTitle: "제출", textInputPlaceholder: "일기를 입력해주세요")
-        let acceptAction = UNNotificationAction(identifier: "ACCEPT_ACTION", title: "Accept", options: [])
-        let declineAction = UNNotificationAction(identifier: "DECLINE_ACTION", title: "Decline", options: [])
+        let acceptAction = UNNotificationAction(identifier: "SKIP_ACTION", title: "이번 일기 건너뛰기", options: [])
 
         // Define the notification type
         let basicNotificationCategory =
         UNNotificationCategory(identifier: "STUDENT_NOTIFICATION",
-                               actions: [textAction, acceptAction, declineAction],
+                               actions: [textAction, acceptAction],
                                intentIdentifiers: [],
                                hiddenPreviewsBodyPlaceholder: "일기를 입력해주세요",
                                options: .customDismissAction)
@@ -96,12 +96,8 @@ class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterD
               }
              break
                     
-          case "ACCEPT_ACTION":
-             print("didReceive: accept")
-             break
-                    
-          case "DECLINE_ACTION":
-            print("didReceive: decline")
+          case "SKIP_ACTION":
+             print("didReceive: skip")
              break
                     
           default:
