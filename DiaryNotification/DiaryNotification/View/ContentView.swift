@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.scenePhase) var scenePhase
     @State private var currentView = "학생"
-    @State private var diary = ""
-    @State private var isDiarySubmitted = false
+    @State private var diary = UserDefaults.standard.string(forKey: "diary") ?? ""
+    @State private var isDiarySubmitted = UserDefaults.standard.bool(forKey: "isDiarySubmitted")
     let users = ["학생", "선생님"]
     var body: some View {
         NavigationStack {
@@ -32,6 +33,22 @@ struct ContentView: View {
                 NavigationLink(destination: SettingView(), label: {
                     Image(systemName: "gearshape")
                 })
+                .tint(.customYellow)
+            }
+            .onAppear {
+                print("onAppear: ContentView")
+                diary = UserDefaults.standard.string(forKey: "diary") ?? ""
+                isDiarySubmitted = UserDefaults.standard.bool(forKey: "isDiarySubmitted")
+            }
+            .onChange(of: scenePhase) { newValue in
+                switch newValue {
+                case .active:
+                    print("active: ContentView")
+                    diary = UserDefaults.standard.string(forKey: "diary") ?? ""
+                    isDiarySubmitted = UserDefaults.standard.bool(forKey: "isDiarySubmitted")
+                default:
+                    break
+                }
             }
         }
     }
