@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    private var firebaseHandler = FirebaseHandler.shared
     @Environment(\.scenePhase) var scenePhase
     @State private var currentView = "학생"
     @State private var diary = UserDefaults.standard.string(forKey: "diary") ?? ""
