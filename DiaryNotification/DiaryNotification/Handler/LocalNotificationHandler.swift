@@ -42,7 +42,8 @@ class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterD
             let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
             trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         } else if type == "action" {
-            trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
+            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         }
         
         // 알림의 제목, 내용, 소리를 설정한다
@@ -52,7 +53,7 @@ class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterD
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "LongPop.mp3"))
         if type == "action" {
             setCategories()
-            content.categoryIdentifier = "BASIC_NOTIFICATION"
+            content.categoryIdentifier = "STUDENT_NOTIFICATION"
         }
 
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
@@ -63,16 +64,15 @@ class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterD
     func setCategories() {
         print("set: categories")
         // Define the custom actions
-        let textAction = UNTextInputNotificationAction(identifier: "TEXT_ACTION", title: "Input text with keyboard", options: [])
-        let acceptAction = UNNotificationAction(identifier: "ACCEPT_ACTION", title: "Accept", options: [])
-        let declineAction = UNNotificationAction(identifier: "DECLINE_ACTION", title: "Decline", options: [])
+        let textAction = UNTextInputNotificationAction(identifier: "TEXT_ACTION", title: "간단하게 일기 쓰기", options: [], textInputButtonTitle: "제출", textInputPlaceholder: "일기를 입력해주세요")
+        let acceptAction = UNNotificationAction(identifier: "SKIP_ACTION", title: "이번 일기 건너뛰기", options: [])
 
         // Define the notification type
         let basicNotificationCategory =
-        UNNotificationCategory(identifier: "BASIC_NOTIFICATION",
-                               actions: [textAction, acceptAction, declineAction],
+        UNNotificationCategory(identifier: "STUDENT_NOTIFICATION",
+                               actions: [textAction, acceptAction],
                                intentIdentifiers: [],
-                               hiddenPreviewsBodyPlaceholder: "input text here",
+                               hiddenPreviewsBodyPlaceholder: "일기를 입력해주세요",
                                options: .customDismissAction)
         // Register the notification type
         let notificationCenter = UNUserNotificationCenter.current()
@@ -87,21 +87,21 @@ class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterD
         print("didReceive: userNotificationCenter")
             
        if response.notification.request.content.categoryIdentifier ==
-                  "BASIC_NOTIFICATION" {
+                  "STUDENT_NOTIFICATION" {
           switch response.actionIdentifier {
           case "TEXT_ACTION":
               print("didReceive: text input")
               if let userInput = (response as? UNTextInputNotificationResponse)?.userText {
                   print(userInput)
+                  UserDefaults.standard.set(userInput, forKey: "diary")
+                  UserDefaults.standard.set(true, forKey: "isDiarySubmitted")
               }
              break
                     
-          case "ACCEPT_ACTION":
-             print("didReceive: accept")
-             break
-                    
-          case "DECLINE_ACTION":
-            print("didReceive: decline")
+          case "SKIP_ACTION":
+             print("didReceive: skip")
+              UserDefaults.standard.set("오늘은 일기 쉬는 날!", forKey: "diary")
+              UserDefaults.standard.set(true, forKey: "isDiarySubmitted")
              break
                     
           default:
@@ -123,7 +123,7 @@ class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterD
         print("willPresent: userNotificationCenter")
         
        if notification.request.content.categoryIdentifier ==
-                "BASIC_NOTIFICATION" {
+                "STUDENT_NOTIFICATION" {
           // Play a sound to let the user know about the invitation.
           completionHandler(.sound)
           return

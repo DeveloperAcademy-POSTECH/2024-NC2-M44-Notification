@@ -48,7 +48,9 @@ struct TeacherView: View {
     func stampDiary() {
         print("teacher: stamp diary")
         isDiarySubmitted = false
+        UserDefaults.standard.set(isDiarySubmitted, forKey: "isDiarySubmitted")
         diary = ""
+        UserDefaults.standard.set(diary, forKey: "diary")
     }
 }
 
