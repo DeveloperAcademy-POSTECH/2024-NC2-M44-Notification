@@ -52,14 +52,14 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         self.forwardDeviceTokenToServer(deviceToken: deviceToken)
         
         Messaging.messaging().apnsToken = deviceToken
-        Messaging.messaging().token { token, error in
-            if let error = error {
-                print("Error fetching FCM registration token: \(error)")
-            } else if let validToken = token {
-                print("FCM registration token: \(validToken)")
-                //            self.fcmRegTokenMessage.text  = "Remote FCM registration token: \(token)"
-            }
-        }
+//        Messaging.messaging().token { token, error in
+//            if let error = error {
+//                print("Error fetching FCM registration token: \(error)")
+//            } else if let validToken = token {
+//                print("FCM registration token: \(validToken)")
+//                //            self.fcmRegTokenMessage.text  = "Remote FCM registration token: \(token)"
+//            }
+//        }
     }
     
     private func forwardDeviceTokenToServer(deviceToken: Data) {

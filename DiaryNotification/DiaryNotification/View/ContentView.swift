@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    private var firebaseHandler = FirebaseHandler.shared
     @State private var currentView = "학생"
     @State private var diary = ""
     @State private var isDiarySubmitted = false
