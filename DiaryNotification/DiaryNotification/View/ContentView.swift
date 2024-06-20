@@ -33,6 +33,7 @@ struct ContentView: View {
                 NavigationLink(destination: SettingView(), label: {
                     Image(systemName: "gearshape")
                 })
+                .tint(.customYellow)
             }
             .onAppear {
                 print("onAppear: ContentView")

@@ -42,9 +42,8 @@ class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterD
             let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
             trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         } else if type == "action" {
-//            let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
-//            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-            trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+            let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
+            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         }
         
         // 알림의 제목, 내용, 소리를 설정한다
